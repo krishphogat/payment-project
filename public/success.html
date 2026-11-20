@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your payment was confirmed and verified successfully.">
+  <title>Payment Successful · Ramanujan Pvt. Ltd.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="status-page" data-page="success">
+  <main class="status-card">
+    <span class="status-icon success" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 12.5l5 5L20 6.5"></path>
+      </svg>
+    </span>
+    <p class="eyebrow">Payment confirmed</p>
+    <h1>Payment successful</h1>
+    <p class="status-copy">The Razorpay signature was verified on the server and this order is recorded as paid.</p>
+
+    <dl class="order-facts">
+      <div>
+        <dt>Order ID</dt>
+        <dd id="fact-order">—</dd>
+      </div>
+      <div>
+        <dt>Amount</dt>
+        <dd id="fact-amount">—</dd>
+      </div>
+      <div>
+        <dt>Payment ID</dt>
+        <dd id="fact-payment">—</dd>
+      </div>
+      <div>
+        <dt>Paid on</dt>
+        <dd id="fact-date">—</dd>
+      </div>
+    </dl>
+
+    <p id="status-note" class="status-note hidden"></p>
+
+    <div class="status-actions">
+      <a class="button" href="/">Back to store</a>
+      <a class="button ghost" href="/#history">View transactions</a>
+    </div>
+  </main>
+
+  <script src="status.js"></script>
+</body>
+</html>

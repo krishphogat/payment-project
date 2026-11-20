@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your payment did not go through. Nothing was charged. Try again.">
+  <title>Payment Not Completed · Ramanujan Pvt. Ltd.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="status-page" data-page="failure">
+  <main class="status-card">
+    <span class="status-icon failure" aria-hidden="true">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+        <path d="M6 6l12 12M18 6L6 18"></path>
+      </svg>
+    </span>
+    <p class="eyebrow eyebrow-danger">Payment not completed</p>
+    <h1>That payment did not go through</h1>
+    <p class="status-copy">Nothing was charged for this attempt. Review your cart and try again whenever you are ready.</p>
+
+    <p id="status-reason" class="status-reason"></p>
+
+    <dl class="order-facts">
+      <div>
+        <dt>Order ID</dt>
+        <dd id="fact-order">—</dd>
+      </div>
+      <div>
+        <dt>Amount</dt>
+        <dd id="fact-amount">—</dd>
+      </div>
+      <div>
+        <dt>Attempted on</dt>
+        <dd id="fact-date">—</dd>
+      </div>
+    </dl>
+
+    <p id="status-note" class="status-note hidden"></p>
+
+    <div class="status-actions">
+      <a class="button" href="/">Back to checkout</a>
+      <a class="button ghost" href="/#history">View transactions</a>
+    </div>
+  </main>
+
+  <script src="status.js"></script>
+</body>
+</html>

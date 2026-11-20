@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Securely reserve your workshop seat and pay online. Fast, verified payments powered by Razorpay.">
+  <title>Workshop Checkout · Ramanujan Pvt. Ltd.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="store-page">
+  <header class="site-header">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">R</span>
+      <span>
+        <strong>Ramanujan</strong>
+        <small>Pvt. Ltd.</small>
+      </span>
+    </a>
+    <span id="mode-badge" class="badge hidden" role="status"></span>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">Workshop checkout</p>
+      <h1>Reserve your seat. Pay securely with Razorpay.</h1>
+      <p class="lede">Choose a pass below. The server calculates the amount, Razorpay collects the payment, and the signature is verified before the order is confirmed.</p>
+    </section>
+
+    <div class="checkout-grid">
+      <section aria-labelledby="products-title">
+        <div class="section-head">
+          <h2 id="products-title">Choose your pass</h2>
+          <p class="hint">Up to 10 passes per item.</p>
+        </div>
+        <div id="product-grid" class="product-grid"></div>
+      </section>
+
+      <aside class="summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">Order summary</h2>
+        <ul id="cart-lines" class="cart-lines"></ul>
+        <div class="summary-totals">
+          <div class="total-row">
+            <span>Total</span>
+            <strong id="total">₹0</strong>
+          </div>
+          <p class="hint">The amount is recalculated on the server when the order is created.</p>
+        </div>
+        <button id="pay-button" class="button pay-button" type="button" disabled>Pay now</button>
+        <p id="checkout-status" class="checkout-status" role="status" aria-live="polite"></p>
+      </aside>
+    </div>
+
+    <section id="history" class="history" aria-labelledby="history-title">
+      <div class="section-head history-head">
+        <div>
+          <h2 id="history-title">Recent transactions</h2>
+          <p class="hint">Orders created in this browser, verified against the server.</p>
+        </div>
+        <button id="refresh-history" class="button ghost small" type="button">Refresh</button>
+      </div>
+      <div class="table-wrap">
+        <table id="history-table" class="history-table hidden">
+          <thead>
+            <tr>
+              <th scope="col">Order</th>
+              <th scope="col">Date</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody id="history-body"></tbody>
+        </table>
+      </div>
+      <p id="history-empty" class="empty-state">No transactions yet. Your first paid order will appear here.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Workshop demo for Razorpay Checkout. Use test keys; no real money should move.</p>
+  </footer>
+
+  <div id="demo-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <div class="modal-card">
+      <p class="eyebrow">Sandbox checkout</p>
+      <h2 id="demo-title">Demo payment</h2>
+      <p class="modal-copy">Razorpay keys are not configured, so this simulates checkout. The signed demo payment still goes through the same server verification.</p>
+      <p id="demo-amount" class="demo-amount"></p>
+      <div class="modal-actions">
+        <button id="demo-success" class="button" type="button">Simulate success</button>
+        <button id="demo-failure" class="button danger" type="button">Simulate failure</button>
+        <button id="demo-cancel" class="button ghost" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
